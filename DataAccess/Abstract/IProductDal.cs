@@ -7,13 +7,8 @@ using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-   public interface IProductDal
+   public interface IProductDal:IEntityRepository<Product> // Sen bir IEntityRepository'sin ve çalışma tipin "Product"'dır dedik
    {
-       List<Product> GetAll();
-       void Add(Product product); // Interface metotları Default publictir (Kendi degil ama) 
-       void Update(Product product);
-       void Delete(Product product);
-       List<Product> GetAllByCategory(int categoryId); // Ürünleri categorylerine göre filtrelemek için
-
+      
    }
 }
