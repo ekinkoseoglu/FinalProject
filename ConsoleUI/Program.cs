@@ -40,7 +40,15 @@ namespace ConsoleUI
             foreach (var x in productManagerEf.GetAllByCategoryId(2))
             {
                 Console.WriteLine(x.CategoryId +"  "+ x.ProductName);
+                
             }
+
+            foreach (var x in productManagerEf.GetAllByUnitPrice(20,50))
+            {
+                Console.WriteLine(x.ProductName + " " + x.UnitPrice);
+            }
+
+            Console.WriteLine(productManagerEf.GetAllByUnitPrice(20, 40).Count);
         }
     }
 }

@@ -18,8 +18,7 @@ namespace DataAccess.Concrete.EntityFramework
             using (NorthwindContext context =new NorthwindContext())
             {
                 // Yukarıda bir filtre verebilsin ama o filtre isterse vermeyedebilir(default fitle = null)
-                return
-                    filter == null
+                return filter == null
                         // NorthwindContext içindeki DbSet'teki Product için oraya yerleş (YANİ BEN Products TABLOSUYLA ÇALIŞACAĞIM DEMEK)  
 
                         ? context.Set<Product>().ToList() // Eğer filtre vermemişse (VERİTABANINDAKİ BÜTÜN Products TABLOSUNU LİSTEYE ÇEVİR VE ONU BANA RETURNLA) (ARKA PLANDA BİZİM İÇİN "Select * From Products" ÇALIŞTIRIYOR)
@@ -39,7 +38,7 @@ namespace DataAccess.Concrete.EntityFramework
         }
 
         public void Add(Product entity)
-        {
+        {   // IDisposable Pattern Implementation of C#
             using (NorthwindContext context = new NorthwindContext()) // "using" C#'a özel çok güzel bir yapıdır. Biz bir Class'ı new ledigimizde o bellekten Garbage Collector belli bir zamanda düzenli olarak gelir ve bellekten onu atar. Using içerisine yazdığımız nesneler using içerisine gelince anında Garbage Collector'e gelip "Beni bellekten at" der çünkü Context nesnesi biraz pahalı. Yani Northwind context bellekten işi bitince atılacak
             {
                 var addedEntity = context.Entry(entity); // Git Veri Kaynağından benim parametre gönderdiğim productla bir tane nesne ekle (YANİ SADECE REFERANSI YAKALA- NORTHWIND context'e BAĞLA BU entity parametresini)
