@@ -11,7 +11,12 @@ namespace DataAccess.Abstract
 {
    public interface IProductDal:IEntityRepository<Product> // Sen bir IEntityRepository'sin ve çalışma tipin "Product"'dır dedik
    {
+      // Buraya ürüne ait özel operasyonları koyacağız
       
+      // Örneğin ürünün detaylarını getirmek için ürün Category tablolarına join atmak gibi
+
+      // DTO metodları buraya yazılacak 
+
    }
 }
 //Code Refactoring
