@@ -4,9 +4,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Entities.Abstract;
+using Core.Entities;
 
-namespace DataAccess.Abstract
+
+namespace Core.DataAccess
 {
     // Generic Constraint
     // class: Sadece classlar olabilir demek değil, REFERANS TİPLER OLABİLİR demek (int,bool,decimal gibi değer tipler gitti yani)
