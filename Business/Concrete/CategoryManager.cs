@@ -24,7 +24,7 @@ namespace Business.Concrete
             return _categoryDal.GetAll();
         }
 
-        public Category GetById(int cId)
+        public Category GetById(int cId) // select * from Categories where CategoryId = ???
         {
             return _categoryDal.Get(c=>c.CategoryId== cId); // CATEGORY SERVŞCE YAPTIK İÇİNİ İMZALARLA YAZDIK SUAN MANAGER'İNİ YAZIYORUZ
         }

@@ -1499,6 +1499,9 @@
       "Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5"
+        },
         "compile": {
           "bin/placeholder/Core.dll": {}
         },

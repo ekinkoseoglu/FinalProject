@@ -11,7 +11,7 @@ namespace Core.DataAccess.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity> // Bana birtane tablo ver bir tane de context tipi ver
         where TEntity : class, IEntity, new()
-        where TContext : DbContext, new()
+        where TContext : DbContext, new() // Dbcontext bir sürü abstract class içerdiği için New' lenebilir şartını koyarak sadece Nortwind' class'ını kullanabilmemizi sağlıyor
 
     {
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
