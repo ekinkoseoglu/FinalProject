@@ -63,9 +63,9 @@ namespace ConsoleUI
             // 05/11/2021 9, Ders
 
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var x in categoryManager.GetAll())
+            foreach (var x in productManager.GetProductDetails())
             {
-                Console.WriteLine(x.CategoryId + " " + x.CategoryName);
+                Console.WriteLine(x.ProductName + "---" + x.CategoryName);
             }
 
             
