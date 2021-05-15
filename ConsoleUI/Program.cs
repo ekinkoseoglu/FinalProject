@@ -68,6 +68,13 @@ namespace ConsoleUI
                 Console.WriteLine(x.ProductName + "---" + x.CategoryName);
             }
 
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            Console.WriteLine("-----");
+            foreach (var x in customerManager.GetAll())
+            {
+                Console.WriteLine(x.CompanyName+"----"+x.CustomerID+"----"+x.City);
+            }
+
             
         }
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -35,6 +36,23 @@ namespace Business.Concrete
        public List<Product> GetAllByUnitPrice(decimal min, decimal max)
        {
            return _productDal.GetAll(p => p.UnitPrice >=min && p.UnitPrice <= max);
+       }
+
+       public IResult Add(Product product)
+       {
+           _productDal.Add(product);
+       }
+
+       public IResult Update(Product product)
+       {
+           _productDal.Update(product);
+           return new Result(true, "Ürün eklendi");
+       }
+
+       public IResult Delete(int id)
+       {
+           var deletedProduct = _productDal.Get(p => p.ProductId == id);
+           _productDal.Delete(deletedProduct);
        }
 
        public List<ProductDetailDto> GetProductDetails()
