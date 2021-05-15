@@ -40,20 +40,27 @@ namespace Business.Concrete
 
        public IResult Add(Product product)
        {
+           if (product.ProductName.Length < 2)
+           {
+               // Magic Strings
+               return new ErrorResult("Ürün ismi en az 2 karakterden büyük olmalıdır");
+           }
            _productDal.Add(product);
-       }
+           return new Result(true, "Ürün eklendi");
+        }
 
        public IResult Update(Product product)
        {
            _productDal.Update(product);
-           return new Result(true, "Ürün eklendi");
+           return new Result(true, "Ürün Güncellendi");
        }
 
        public IResult Delete(int id)
        {
            var deletedProduct = _productDal.Get(p => p.ProductId == id);
            _productDal.Delete(deletedProduct);
-       }
+           return new Result(true, "Ürün Silindi");
+        }
 
        public List<ProductDetailDto> GetProductDetails()
        {
