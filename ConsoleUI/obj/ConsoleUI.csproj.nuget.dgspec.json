@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ekind\\source\\repos\\FinalProject\\ConsoleUI\\ConsoleUI.csproj": {}
+    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\ConsoleUI\\ConsoleUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ekind\\source\\repos\\FinalProject\\Business\\Business.csproj": {
+    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Business\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\ekind\\source\\repos\\FinalProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Entities\\Entities.csproj"
+              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -65,25 +61,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\source\\repos\\FinalProject\\ConsoleUI\\ConsoleUI.csproj": {
+    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\ConsoleUI\\ConsoleUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\source\\repos\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
         "projectName": "ConsoleUI",
-        "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
+        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\ConsoleUI\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\ConsoleUI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,8 +89,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\source\\repos\\FinalProject\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Business\\Business.csproj"
+              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj"
               }
             }
           }
@@ -127,25 +119,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\source\\repos\\FinalProject\\Core\\Core.csproj": {
+    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Core\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -173,7 +161,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[5.0.6, )"
             }
           },
           "imports": [
@@ -191,25 +179,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -223,11 +207,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\source\\repos\\FinalProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Core\\Core.csproj"
+              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj"
               },
-              "C:\\Users\\ekind\\source\\repos\\FinalProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Entities\\Entities.csproj"
+              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -244,7 +228,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[5.0.6, )"
             }
           },
           "imports": [
@@ -262,25 +246,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\source\\repos\\FinalProject\\Entities\\Entities.csproj": {
+    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -294,8 +274,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\source\\repos\\FinalProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\ekind\\source\\repos\\FinalProject\\Core\\Core.csproj"
+              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj"
               }
             }
           }
@@ -324,7 +304,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
