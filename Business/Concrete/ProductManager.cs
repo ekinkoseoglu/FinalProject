@@ -12,70 +12,94 @@ using Entities.DTOs;
 
 namespace Business.Concrete
 {
-   public class ProductManager:IProductService
-   {
-       private IProductDal _productDal; // Ne InMemory İsmi geçecek ne EntityFramework ismi geçecek. Benim işim hepsinin referansını tutan İnterface'leriyle
+    public class ProductManager : IProductService
+    {
+        private IProductDal _productDal; // Ne InMemory İsmi geçecek ne EntityFramework ismi geçecek. Benim işim hepsinin referansını tutan İnterface'leriyle
 
-       public ProductManager(IProductDal productDal)
-       {
-           _productDal = productDal;
-       }
-
-       public IDataResult<List<Product>> GetAll()
+        public ProductManager(IProductDal productDal)
         {
-          
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductListed); // Ben 2DataResult<>' döndürüyorum, Çalıştığım tip 'List<Product>' dır, ilk parametre '_productDal.GetAll()' döndürdüğüm datadır, 'true' işlem sonucumdur ve mesajım da "Ürünler Listelendi"
+            _productDal = productDal;
+        }
+
+        public IDataResult<List<Product>> GetAll()
+        {
+            if (DateTime.Now.Hour == 2)
+            {
+                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
+            }
+
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductListed); // Ben 2DataResult<>' döndürüyorum, Çalıştığım tip 'List<Product>' dır, ilk parametre '_productDal.GetAll()' döndürdüğüm datadır, 'true' işlem sonucumdur ve mesajım da "Ürünler Listelendi"
 
         }
 
-       public IDataResult<Product> GetById(int id)
-       {
-          
-            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == id),Messages.HasShown);
-       }
-
-       public IDataResult<List<Product>> GetAllByCategoryId(int id)
-       {
-          
-
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p=>p.CategoryId==id),Messages.ProductListed);
-       }
-
-       public IDataResult<List<Product>> GetAllByUnitPrice(decimal min, decimal max)
-       {
-           
-
-           return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >=min && p.UnitPrice <= max),Messages.ProductListed);
-       }
-
-       public IResult Add(Product product)
-       {
-           if (product.ProductName.Length < 2)
-           {
-               // Magic Strings
-               return new ErrorResult(Messages.ProductNameInvalid);
-           }
-           _productDal.Add(product);
-           return new Result(true, Messages.ProductAdded);
+        public IDataResult<Product> GetById(int id)
+        {
+            if (DateTime.Now.Hour == 2)
+            {
+                return new ErrorDataResult<Product>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == id), Messages.HasShown);
         }
 
-       public IResult Update(Product product)
-       {
-           _productDal.Update(product);
-           return new Result(true, "Ürün Güncellendi");
-       }
+        public IDataResult<List<Product>> GetAllByCategoryId(int id)
+        {
 
-       public IResult Delete(int id)
-       {
-           var deletedProduct = _productDal.Get(p => p.ProductId == id);
-           _productDal.Delete(deletedProduct);
-           return new Result(true, "Ürün Silindi");
+            if (DateTime.Now.Hour == 2)
+            {
+                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
+            }
+
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id), Messages.ProductListed);
         }
 
-       public IDataResult<List<ProductDetailDto>> GetProductDetails()
-       {
-           
+        public IDataResult<List<Product>> GetAllByUnitPrice(decimal min, decimal max)
+        {
+
+
+            if (DateTime.Now.Hour == 2)
+            {
+                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max), Messages.ProductListed);
+        }
+
+        public IResult Add(Product product)
+        {
+            if (product.ProductName.Length < 2)
+            {
+                // Magic Strings
+                return new ErrorResult(Messages.ProductNameInvalid);
+            }
+            _productDal.Add(product);
+            return new SuccessResult(Messages.ProductAdded);
+        }
+
+        public IResult Update(Product product)
+        {
+
+            if (DateTime.Now.Hour == 2)
+            {
+                return new ErrorResult(Messages.MaintenanceTime);
+            }
+            _productDal.Update(product);
+            return new SuccessResult("Ürün Güncellendi");
+        }
+
+        public IResult Delete(int id)
+        {
+            var deletedProduct = _productDal.Get(p => p.ProductId == id);
+            _productDal.Delete(deletedProduct);
+            return new SuccessResult("Ürün Silindi");
+        }
+
+        public IDataResult<List<ProductDetailDto>> GetProductDetails()
+        {
+            if (DateTime.Now.Hour == 22)
+            {
+                return new ErrorDataResult<List<ProductDetailDto>>(Messages.MaintenanceTime);
+            }
+
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails(), Messages.ProductListed);
-       }
-   }
+        }
+    }
 }

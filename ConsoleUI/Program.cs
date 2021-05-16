@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using System;
 using Business.Abstract;
+using Business.Constants;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
@@ -64,13 +65,17 @@ namespace ConsoleUI
             // 05/11/2021 9, Ders
 
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+
+
             var result = productManagerEf.GetProductDetails();
             if (result.Success==true)
             {
-                foreach (var x in result.Data)
+                foreach (var x in productManagerEf.GetProductDetails().Data)
                 {
-                    Console.WriteLine(x.ProductName+"----"+x.CategoryName);
+                    Console.WriteLine(x.ProductName + "----" + x.CategoryName);
                 }
+
+                Console.WriteLine(result.Message);
             }
             else
             {

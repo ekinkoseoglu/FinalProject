@@ -11,7 +11,7 @@ namespace Business.Constants
        // publicler pascal case yazılır
        public static string ProductAdded = "Ürün Eklendi";
        public static string ProductNameInvalid = "Ürün İsmi Geçersiz";
-       public static string MaintenanceTime = "Sistem saat 22:00 dan sonra Bakımdadır.";
+       public static string MaintenanceTime = "Sistem Şuanda Bakımdadır.";
        public static string ProductListed = "Ürünler Listelendi";
        public  static string HasShown = "Ürün Gösterildi";
     }
