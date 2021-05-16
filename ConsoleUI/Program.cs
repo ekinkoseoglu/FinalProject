@@ -62,13 +62,25 @@ namespace ConsoleUI
             Console.WriteLine(productManager.GetAllByUnitPrice(20, 40).Count);
             */
 
-            // 05/11/2021 9, Ders
+            // 05/11/2021 9. Ders
 
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
 
+
+
+            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            //Console.WriteLine("-----");
+            //foreach (var x in customerManager.GetAll())
+            //{
+            //    Console.WriteLine(x.CompanyName+"----"+x.CustomerID+"----"+x.City);
+            //}
+
+
+            // 05/16/2021 10 Ders
+
             var result = productManagerEf.GetProductDetails();
-            if (result.Success==true)
+            if (result.Success == true)
             {
                 foreach (var x in productManagerEf.GetProductDetails().Data)
                 {
@@ -81,15 +93,6 @@ namespace ConsoleUI
             {
                 Console.WriteLine(result.Message);
             }
-
-            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
-            //Console.WriteLine("-----");
-            //foreach (var x in customerManager.GetAll())
-            //{
-            //    Console.WriteLine(x.CompanyName+"----"+x.CustomerID+"----"+x.City);
-            //}
-
-            
         }
     }
 }
