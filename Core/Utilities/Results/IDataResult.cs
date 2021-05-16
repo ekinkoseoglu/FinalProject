@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Core.Utilities.Results
 {
-    interface IDataResult
+   public interface IDataResult<T>:IResult // sen aynı zamanda bir IResult sın çünkü IResult'ın bulundurduğu Success ve Message methodlarını da kullanacağız sende, ek olarak yukarıda belirttiğim T türünde bir data da olacak
     {
+        public T Data { get;}
     }
 }

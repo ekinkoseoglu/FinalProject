@@ -10,10 +10,10 @@ namespace Core.Utilities.Results
     {
        
 
-        public Result(bool success, string message):this(success) // Result class'ının constructoruna "success"'i yolla dersen aslında alttaki Success constructoruda çalısır bu constructorda çalışır
+        public Result(bool success, string message):this(success) // 'This' yani bu Result class'ının (success) isimli tek parametresi olan Constructor'una 'succes' i yolla
         {
             Message = message;
-            Success = success;
+            
         }
         public Result(bool success) // Her methoddan sonra mesaj vermek istemiyorsamsa sadece işlemi yapacak mesajı göndermeyecek constructor'u overload edebilirim
         {

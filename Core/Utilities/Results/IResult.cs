@@ -11,7 +11,7 @@ namespace Core.Utilities.Results
     //Yaptığımız şey bizim API lerimizi ya da uygulamalarımızı kullanacak kişileri doğru yönlendirmek
    public interface IResult
     {
-        bool Success { get; } // Yapmaya çalıştığım ekleme işi başarılı mı başarısız mı olduğunu okuyan property
-        string Message { get; }// Başarılıysa başarılı olduğunu, başarısızsa başarısız olduğunu söyleyen proeprty
+       public bool Success { get; } // Yapmaya çalıştığım ekleme işi başarılı mı başarısız mı olduğunu okuyan property
+       public string Message { get; }// Başarılıysa başarılı olduğunu, başarısızsa başarısız olduğunu söyleyen proeprty
     }
 }

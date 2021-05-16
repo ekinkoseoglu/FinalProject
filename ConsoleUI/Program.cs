@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using System;
+using Business.Abstract;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
@@ -11,8 +12,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            IProductDal InMemoryProductDal = new InMemoryProductDal();
-            ProductManager productManagerIM = new ProductManager(InMemoryProductDal);
+            
+            ProductManager productManagerIM = new ProductManager(new InMemoryProductDal());
 
             // 05/2/2021 7. Ders
             /*
@@ -38,7 +39,7 @@ namespace ConsoleUI
 
             
           
-            ProductManager productManager = new ProductManager(new EfProductDal());
+            IProductService productManagerEf = new ProductManager(new EfProductDal());
             
             /*
             foreach (var x in productManager.GetAll())
@@ -63,17 +64,25 @@ namespace ConsoleUI
             // 05/11/2021 9, Ders
 
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var x in productManager.GetProductDetails())
+            var result = productManagerEf.GetProductDetails();
+            if (result.Success==true)
             {
-                Console.WriteLine(x.ProductName + "---" + x.CategoryName);
+                foreach (var x in result.Data)
+                {
+                    Console.WriteLine(x.ProductName+"----"+x.CategoryName);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
 
-            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
-            Console.WriteLine("-----");
-            foreach (var x in customerManager.GetAll())
-            {
-                Console.WriteLine(x.CompanyName+"----"+x.CustomerID+"----"+x.City);
-            }
+            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            //Console.WriteLine("-----");
+            //foreach (var x in customerManager.GetAll())
+            //{
+            //    Console.WriteLine(x.CompanyName+"----"+x.CustomerID+"----"+x.City);
+            //}
 
             
         }
