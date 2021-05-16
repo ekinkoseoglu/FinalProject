@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Business.Constants
 {
-    class Messages
-    {
-    }
+   public static class Messages
+   {
+       // publicler pascal case yazılır
+       public static string ProductAdded = "Ürün Eklendi";
+       public static string ProductNameInvalid = "Ürün İsmi Geçersiz";
+   }
 }
