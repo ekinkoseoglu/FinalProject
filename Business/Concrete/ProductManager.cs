@@ -23,7 +23,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour == 2)
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
@@ -34,7 +34,7 @@ namespace Business.Concrete
 
         public IDataResult<Product> GetById(int id)
         {
-            if (DateTime.Now.Hour == 2)
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 return new ErrorDataResult<Product>(Messages.MaintenanceTime);
             }
@@ -44,7 +44,7 @@ namespace Business.Concrete
         public IDataResult<List<Product>> GetAllByCategoryId(int id)
         {
 
-            if (DateTime.Now.Hour == 2)
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
@@ -56,7 +56,7 @@ namespace Business.Concrete
         {
 
 
-            if (DateTime.Now.Hour == 2)
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
@@ -65,7 +65,7 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            if (product.ProductName.Length < 2)
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 // Magic Strings
                 return new ErrorResult(Messages.ProductNameInvalid);
@@ -77,7 +77,7 @@ namespace Business.Concrete
         public IResult Update(Product product)
         {
 
-            if (DateTime.Now.Hour == 2)
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }
@@ -87,6 +87,11 @@ namespace Business.Concrete
 
         public IResult Delete(int id)
         {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorResult(Messages.MaintenanceTime);
+            }
+
             var deletedProduct = _productDal.Get(p => p.ProductId == id);
             _productDal.Delete(deletedProduct);
             return new SuccessResult("Ürün Silindi");
@@ -94,7 +99,7 @@ namespace Business.Concrete
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 return new ErrorDataResult<List<ProductDetailDto>>(Messages.MaintenanceTime);
             }

@@ -10,6 +10,8 @@ namespace Business.Constants
    {
        // publicler pascal case yazılır
        public static string ProductAdded = "Ürün Eklendi";
+       public static string Deleted = "Ürün Silindi";
+       public static string Updated = "Ürün Güncellendi";
        public static string ProductNameInvalid = "Ürün İsmi Geçersiz";
        public static string MaintenanceTime = "Sistem Şuanda Bakımdadır.";
        public static string ProductListed = "Ürünler Listelendi";

@@ -13,7 +13,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            
+
             ProductManager productManagerIM = new ProductManager(new InMemoryProductDal());
 
             // 05/2/2021 7. Ders
@@ -38,10 +38,10 @@ namespace ConsoleUI
 
             // 05/9/2021 8. Ders 
 
-            
-          
+
+
             IProductService productManagerEf = new ProductManager(new EfProductDal());
-            
+
             /*
             foreach (var x in productManager.GetAll())
             {
@@ -64,7 +64,9 @@ namespace ConsoleUI
 
             // 05/11/2021 9. Ders
 
-            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+            CategoryManager categoryManagerEf = new CategoryManager(new EfCategoryDal());
+            CustomerManager customerManagerEf = new CustomerManager(new EfCustomerDal());
+            
 
 
 
@@ -93,6 +95,41 @@ namespace ConsoleUI
             {
                 Console.WriteLine(result.Message);
             }
+
+            Console.WriteLine("---------------");
+            var result2 = categoryManagerEf.GetAll();
+            if (result2.Success == true)
+            {
+                foreach (var x in result2.Data)
+                {
+                    Console.WriteLine(x.CategoryId +"-----"+x.CategoryName);
+                }
+
+                Console.WriteLine(result2.Message);
+
+            }
+            else
+            {
+                Console.WriteLine(result2.Message);
+            }
+
+            Console.WriteLine("----------");
+
+            var result3 = customerManagerEf.GetAll();
+            if (result3.Success==true)
+            {
+                foreach (var x in result3.Data)
+                {
+                    Console.WriteLine(x.CompanyName+"---"+x.CustomerID);
+                }
+
+                Console.WriteLine(result3.Message);
+            }
+            else
+            {
+                Console.WriteLine(result3.Message);
+            }
         }
+
     }
 }
