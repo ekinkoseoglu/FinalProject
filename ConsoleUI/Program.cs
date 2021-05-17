@@ -81,7 +81,7 @@ namespace ConsoleUI
 
             // 05/16/2021 10 Ders
 
-            var result = productManagerEf.GetProductDetails();
+            var result = productManagerEf.GetProductDetails(); // Product Listele ve Mesaj ver
             if (result.Success == true)
             {
                 foreach (var x in productManagerEf.GetProductDetails().Data)
@@ -97,7 +97,7 @@ namespace ConsoleUI
             }
 
             Console.WriteLine("---------------");
-            var result2 = categoryManagerEf.GetAll();
+            var result2 = categoryManagerEf.GetAll(); // Category Listele ve Mesaj ver
             if (result2.Success == true)
             {
                 foreach (var x in result2.Data)
@@ -115,7 +115,7 @@ namespace ConsoleUI
 
             Console.WriteLine("----------");
 
-            var result3 = customerManagerEf.GetAll();
+            var result3 = customerManagerEf.GetAll(); // Customer Listele ve Mesaj ver
             if (result3.Success==true)
             {
                 foreach (var x in result3.Data)
