@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.Abstract;
+using Entities.Concrete;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace WebAPI.Controllers
 {
@@ -6,10 +9,20 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
+        private IProductService _productService;
+
+        public ProductsController(IProductService productService)
         {
-            return "Merhaba";
+            _productService = productService;
+        }
+
+        [HttpGet]
+        public List<Product> Get()
+        {
+            var result = _productService.GetAll();
+            return result.Data;
+
+
         }
     }
 }

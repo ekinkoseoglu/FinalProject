@@ -1,16 +1,13 @@
+using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebAPI
 {
@@ -28,6 +25,8 @@ namespace WebAPI
         {
 
             services.AddControllers();
+            services.AddSingleton<IProductService, ProductManager>(); // Birisi senden  IProductService isterse ona ProductManager ver
+            services.AddSingleton<IProductDal, EfProductDal>(); // Birisi senden  IProductDal isterse ona EfProductDal ver
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
