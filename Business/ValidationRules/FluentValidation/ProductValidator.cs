@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entities.Concrete;
+﻿using Entities.Concrete;
 using FluentValidation;
 
 namespace Business.ValidationRules.FluentValidation
@@ -22,12 +17,12 @@ namespace Business.ValidationRules.FluentValidation
 
 
 
-                // .WithMessage(""); ile hata olduğu zaman ne yazması gerektiğini belirleyebilirsiniz
+            // .WithMessage(""); ile hata olduğu zaman ne yazması gerektiğini belirleyebilirsiniz
         }
 
         private bool StartWithA(string arg)
         {
-            if (arg.StartsWith("A")|arg.StartsWith("a"))
+            if (arg.StartsWith("A") | arg.StartsWith("a"))
             {
                 return true;
             }
