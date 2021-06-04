@@ -6,6 +6,11 @@ using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
+using FluentValidation;
+using ValidationException = FluentValidation.ValidationException;
 
 namespace Business.Concrete
 {
@@ -59,14 +64,19 @@ namespace Business.Concrete
             }
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max), Messages.ProductListed);
         }
-
-        public IResult Add(Product product)
+        
+    public IResult Add(Product product)
         {
-            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
-            {
-                // Magic Strings
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
+            // business code
+            //validation 
+            //var context = new ValidationContext<Product>(product);/*Product için doğrulama yapacağız, çalışacağımız tip de "product"*/ // FluentValidationu Add Methoda ekleme
+            //ProductValidator productValidator = new ProductValidator(); // ProductValidator kullanarak doğrulayacagım o yüzden kullanmak için instancesini yaratıyoruz
+            //var result = productValidator.Validate(context); // productValidator kullanarak yani Validatordaki yazdığımız kurallar için ilgili context'i yani "product" parametresini (71 satır)var context = new ValidationContext<Product>(product);
+            
+
+             
+            ValidationTool.Validate(new ProductValidator(), product); 
+
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);
         }
