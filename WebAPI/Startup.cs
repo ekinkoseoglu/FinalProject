@@ -25,8 +25,8 @@ namespace WebAPI
         {
 
             services.AddControllers();
-            services.AddSingleton<IProductService, ProductManager>(); // Birisi senden  IProductService isterse ona ProductManager ver
-            services.AddSingleton<IProductDal, EfProductDal>(); // Birisi senden  IProductDal isterse ona EfProductDal ver
+            //services.AddSingleton<IProductService, ProductManager>(); // Birisi senden  IProductService isterse ona ProductManager ver
+            //services.AddSingleton<IProductDal, EfProductDal>(); // Birisi senden  IProductDal isterse ona EfProductDal ver
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
