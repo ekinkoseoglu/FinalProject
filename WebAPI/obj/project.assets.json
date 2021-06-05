@@ -2263,6 +2263,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Autofac": "6.2.0",
+          "Autofac.Extensions.DependencyInjection": "7.1.0",
+          "Autofac.Extras.DynamicProxy": "6.0.0",
           "FluentValidation": "10.2.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6"
         },

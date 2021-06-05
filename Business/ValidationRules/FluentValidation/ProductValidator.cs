@@ -8,7 +8,7 @@ namespace Business.ValidationRules.FluentValidation
         // Hangi nesne için kurallar yazacaksak o kuralları Constructor'un içine yazıyoruz
         public ProductValidator()
         {
-            RuleFor(p => p.UnitPrice).GreaterThan(0);
+            RuleFor(p => p.UnitPrice).GreaterThan(0); //"p=>p" yapısındaki p yukarıdaki <> içinde ne varsa ona karşılık geliyor.
             RuleFor(p => p.UnitPrice).GreaterThanOrEqualTo(10).When(p => p.CategoryId == 1); // Categoryid'si 1 olan ürünlerin ürün fiyatları en az 0 değil 10 tl den büyük olmalı
             RuleFor(p => p.UnitPrice).NotEmpty();
             RuleFor(p => p.ProductName).NotEmpty();
