@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
-using Business.CCS;
 using Business.Concrete;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
@@ -20,7 +19,7 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance(); // Birisi senden "IProductService" isterse ona "ProductManager" ver.
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance(); // Birisi senden "IProductDal" isterse ona "EfProductDal" ver.
-            builder.RegisterType<FileLogger>().As<ILogger>().SingleInstance();
+
 
             /*             Aspect Interceptor Selector                    */
 
