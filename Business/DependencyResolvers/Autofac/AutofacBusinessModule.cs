@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
+using Business.CCS;
 using Business.Concrete;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
@@ -14,13 +10,19 @@ using DataAccess.Concrete.EntityFramework;
 
 namespace Business.DependencyResolvers.Autofac
 {
-    public class AutofacBusinessModule:Module
+    public class AutofacBusinessModule : Module
     {
         protected override void Load(ContainerBuilder builder)
+
+
         {
+            /*         IoC Container            */
+
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance(); // Birisi senden "IProductService" isterse ona "ProductManager" ver.
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance(); // Birisi senden "IProductDal" isterse ona "EfProductDal" ver.
+            builder.RegisterType<FileLogger>().As<ILogger>().SingleInstance();
 
+            /*             Aspect Interceptor Selector                    */
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly(); // Çalışan uygulama içerisinde (1)
 

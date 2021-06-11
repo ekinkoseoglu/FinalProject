@@ -7,6 +7,7 @@ using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Business.CCS;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
@@ -19,9 +20,12 @@ namespace Business.Concrete
     {
         private IProductDal _productDal; // Ne InMemory İsmi geçecek ne EntityFramework ismi geçecek. Benim işim hepsinin referansını tutan İnterface'leriyle
 
-        public ProductManager(IProductDal productDal)
+        private ILogger _logger;
+
+        public ProductManager(IProductDal productDal, ILogger logger)
         {
             _productDal = productDal;
+            _logger = logger;
         }
 
         public IDataResult<List<Product>> GetAll()
@@ -67,15 +71,26 @@ namespace Business.Concrete
         }
 
 
-        [ValidationAspect(typeof(ProductValidator))] // ProductValidator kullanarak Product parametreli bu metodu kontrol et
+        //[ValidationAspect(typeof(ProductValidator))] // ProductValidator kullanarak Product parametreli bu metodu kontrol et
         public IResult Add(Product product)
         {
             // business code
-            
+            _logger.Log();
+            try
+            {
+                _productDal.Add(product);
+
+                return new SuccessResult(Messages.ProductAdded);
+            }
+            catch (Exception e)
+            {
+
+                _logger.Log();
+            }
+
+            return new ErrorResult();
 
 
-            _productDal.Add(product);
-            return new SuccessResult(Messages.ProductAdded);
         }
 
         public IResult Update(Product product)
