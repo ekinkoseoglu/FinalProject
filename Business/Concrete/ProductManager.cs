@@ -1,18 +1,14 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Business.CCS;
-using Business.ValidationRules.FluentValidation;
-using Core.Aspects.Autofac.Validation;
-using Core.CrossCuttingConcerns.Validation;
-using FluentValidation;
-using ValidationException = FluentValidation.ValidationException;
 
 namespace Business.Concrete
 {
@@ -20,12 +16,13 @@ namespace Business.Concrete
     {
         private IProductDal _productDal; // Ne InMemory İsmi geçecek ne EntityFramework ismi geçecek. Benim işim hepsinin referansını tutan İnterface'leriyle
 
-        private ILogger _logger;
+        private ICategoryService _categoryService;
 
-        public ProductManager(IProductDal productDal, ILogger logger)
+        public ProductManager(IProductDal productDal, ICategoryService categoryService)
         {
             _productDal = productDal;
-            _logger = logger;
+            _categoryService = categoryService;
+
         }
 
         public IDataResult<List<Product>> GetAll()
@@ -71,24 +68,22 @@ namespace Business.Concrete
         }
 
 
-        //[ValidationAspect(typeof(ProductValidator))] // ProductValidator kullanarak Product parametreli bu metodu kontrol et
+        [ValidationAspect(typeof(ProductValidator))] // ProductValidator kullanarak Product parametreli bu metodu kontrol et
         public IResult Add(Product product)
         {
-            // business code
-            _logger.Log();
-            try
-            {
-                _productDal.Add(product);
+            // Business CODES 
 
-                return new SuccessResult(Messages.ProductAdded);
-            }
-            catch (Exception e)
-            {
+            var ErrorRule = BusinessRules.Run(CheckProductCategoryLimit(product.CategoryId), CheckProductName(product), CheckGeneralCategoryLimit());
 
-                _logger.Log();
+            if (ErrorRule != null) // Eğer kurala uymayan bir durum varsa
+            {
+                return ErrorRule; // O Methodu döndür ErrorMessage'si zaten onun içerisinde var 
             }
 
-            return new ErrorResult();
+
+            _productDal.Add(product);
+
+            return new SuccessResult(Messages.ProductAdded);
 
 
         }
@@ -124,6 +119,46 @@ namespace Business.Concrete
             }
 
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails(), Messages.ProductListed);
+        }
+
+
+
+
+        /* BUSINESS METHODS  */
+
+
+        private IResult CheckProductCategoryLimit(int categoryId)
+        {
+            // Select Count(*) from Products where CategoryId=1
+            var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
+            if (result >= 10)
+            {
+                return new ErrorResult(Messages.CategoryLimitError);
+            }
+
+            return new SuccessResult();
+        }
+
+        private IResult CheckProductName(Product product)
+        {
+            var result = _productDal.GetAll(p => p.ProductName == product.ProductName);
+            if (result.Count > 0)
+            {
+                return new ErrorResult(Messages.ProductNameAlreadyExists);
+            }
+
+            return new SuccessResult();
+        }
+
+        private IResult CheckGeneralCategoryLimit()
+        {
+            var result = _categoryService.GetAll();
+            if (result.Data.Count > 15)
+            {
+                return new ErrorResult(Messages.GeneralCategoryLimit);
+            }
+
+            return new SuccessResult();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
 
-            ProductManager productManagerIM = new ProductManager(new InMemoryProductDal());
+            
 
             // 05/2/2021 7. Ders
             /*
@@ -40,7 +40,7 @@ namespace ConsoleUI
 
 
 
-            IProductService productManagerEf = new ProductManager(new EfProductDal());
+            
 
             /*
             foreach (var x in productManager.GetAll())
@@ -81,20 +81,20 @@ namespace ConsoleUI
 
             // 05/16/2021 10 Ders
 
-            var result = productManagerEf.GetProductDetails(); // Product Listele ve Mesaj ver
-            if (result.Success == true)
-            {
-                foreach (var x in productManagerEf.GetProductDetails().Data)
-                {
-                    Console.WriteLine(x.ProductName + "----" + x.CategoryName);
-                }
+          //  var result = productManagerEf.GetProductDetails(); // Product Listele ve Mesaj ver
+            //if (result.Success == true)
+            //{
+            //    foreach (var x in productManagerEf.GetProductDetails().Data)
+            //    {
+            //        Console.WriteLine(x.ProductName + "----" + x.CategoryName);
+            //    }
 
-                Console.WriteLine(result.Message);
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
+            //    Console.WriteLine(result.Message);
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
 
             Console.WriteLine("---------------");
             var result2 = categoryManagerEf.GetAll(); // Category Listele ve Mesaj ver

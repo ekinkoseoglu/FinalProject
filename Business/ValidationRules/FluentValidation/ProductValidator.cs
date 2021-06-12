@@ -14,6 +14,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(p => p.ProductName).NotEmpty();
             RuleFor(p => p.ProductName).MinimumLength(2);
             RuleFor(p => p.ProductName).Must(StartWithA).WithMessage("Ürün ismi 'A' ile başlamak zorunda"); // Burada olmayan ama benim spesifik yazmak istediğim kurallar için "Must()" methodunu kullanıyoruz,
+            
 
 
 
@@ -29,5 +30,7 @@ namespace Business.ValidationRules.FluentValidation
             // Ya da direkt return arg.StartsWith("A");
             return false;
         }
+
+        
     }
 }

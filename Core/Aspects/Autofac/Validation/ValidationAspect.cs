@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Castle.DynamicProxy;
+﻿using Castle.DynamicProxy;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Interceptors;
 using FluentValidation;
+using System;
+using System.Linq;
 
 namespace Core.Aspects.Autofac.Validation
 {
@@ -32,5 +29,6 @@ namespace Core.Aspects.Autofac.Validation
                 ValidationTool.Validate(validator, entity); // ValidationTool'u kullanarak Validate et.
             }
         }
+
     }
 }
