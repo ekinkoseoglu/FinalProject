@@ -124,7 +124,7 @@ namespace Business.Concrete
 
 
 
-        /* BUSINESS METHODS  */
+        /* BUSINESS RULES  */
 
 
         private IResult CheckProductCategoryLimit(int categoryId)
