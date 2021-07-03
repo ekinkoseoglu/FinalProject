@@ -15,9 +15,9 @@ namespace Core.Utilities.Security.Hashing
 
         public static bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt) // Datadaki şifreylegirilen şifrenin Hashlerinin karşılaştırarak doğrulama yapıyor
         {
-            using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt)) // Aşağıdaki hashleme tamamen buradaki Salt algoritması kullanılarak yapıylıyor.
+            using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt)) // Aşağıdaki hashleme tamamen yukarıdaki Salt algoritması kullanılarak yapıylıyor.
             {
-                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)); // Bu password kullanıcının sonrasında girdiği parola, bunun eskisiyle eşleştirmek için tekrardan hash'ini yaratacağız (yukarıdaki Saltlama algoritmasını kullanarak)
+                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));  // Bu password kullanıcının sonrasında girdiği parola, bunun eskisiyle eşleştirmek için tekrardan hash'ini yaratacağız (yukarıdaki Saltlama algoritmasını kullanarak)
 
                 for (int i = 0; i < computedHash.Length; i++) // İki hash'i karşılaştırıyoruz
                 {
