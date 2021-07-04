@@ -1,4 +1,5 @@
 ﻿using Core.Entities.Concrete;
+using Core.Extensions;
 using Core.Utilities.Security.Encryption;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -18,7 +19,7 @@ namespace Core.Utilities.Security.JWT
         public JwtHelper(IConfiguration configuration) // Sen beni enjekte et ben WebAPI'nin konfigurasyon nesnesini enjekte ederim diyor
         {
             Configuration = configuration;
-            _tokenOptions = Configuration.GetSection("TokenOptions") as TokenOptions;
+            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
         }
         public AccessToken CreateToken(User user, List<OperationClaim> operationClaims) // Bana User bilgisini ve Claimleri ver ben ona göre bir Token oluşturayım
@@ -62,5 +63,7 @@ namespace Core.Utilities.Security.JWT
 
             return claims;
         }
+
+        
     }
 }

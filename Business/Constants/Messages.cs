@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Business.Constants
+﻿namespace Business.Constants
 {
     public static class Messages
     {
@@ -17,7 +11,8 @@ namespace Business.Constants
         public static string ProductListed = "Ürünler Listelendi";
         public static string HasShown = "Ürün Gösterildi";
         public static string CategoryLimitError = "Aynı kategoriden en fazla 10 adet ürün eklenebilir.";
-        public static string ProductNameAlreadyExists="Böyle bir ürün adı zaten mevcut";
-        public static string GeneralCategoryLimit="En fazla 15 farklı kategori eklenebilir";
+        public static string ProductNameAlreadyExists = "Böyle bir ürün adı zaten mevcut";
+        public static string GeneralCategoryLimit = "En fazla 15 farklı kategori eklenebilir";
+        public static string AuthorizationDenied = "Yetkilendirme Reddedildi";
     }
 }

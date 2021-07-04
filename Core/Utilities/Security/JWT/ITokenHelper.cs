@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Core.Utilities.Security.JWT
 {
-    interface ITokenHelper
+    public interface ITokenHelper
     {
-        AccessToken CreateToken(User user, List<UserOperationClaim> OperationClaims);
+        AccessToken CreateToken(User user, List<OperationClaim> operationClaims); // Bizim Token üretecek mekanizmamızın ta kendisi
     }
 }

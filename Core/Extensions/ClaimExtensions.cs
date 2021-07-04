@@ -5,7 +5,7 @@ using System.Security.Claims;
 
 namespace Core.Extensions
 {
-    public static class ClaimExtensions
+    public static class ClaimExtensions // Claim class içine methodlar ekledik
     {
         public static void AddEmail(this ICollection<Claim> claims, string email) // claims.AddEmail
         {
