@@ -10,7 +10,7 @@ using System;
 namespace Business.BusinessAspects.Autofac
 {
     // JWT için
-    public class SecuredOperation : MethodInterception // Aspect
+    public class SecuredOperation : MethodInterception // Yetki kontrolü yapacak olan Aspect
     {
         private string[] _roles;
         private IHttpContextAccessor _httpContextAccessor;

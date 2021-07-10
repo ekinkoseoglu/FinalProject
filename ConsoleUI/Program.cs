@@ -14,8 +14,6 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
 
-            
-
             // 05/2/2021 7. Ders
             /*
             foreach (var x in productManagerIM.GetAll())
