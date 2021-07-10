@@ -14,5 +14,11 @@
         public static string ProductNameAlreadyExists = "Böyle bir ürün adı zaten mevcut";
         public static string GeneralCategoryLimit = "En fazla 15 farklı kategori eklenebilir";
         public static string AuthorizationDenied = "Yetkilendirme Reddedildi";
+        public static string UserRegistered = "Kayıt Oldu";
+        public static string UserNotFound = "Kullanıcı Bulunamadı";
+        public static string PasswordError = "Parola Hatalı";
+        public static string SuccessfulLogin = "Giriş Başarılı";
+        public static string UserAlreadyExists = "Kullanıcı zaten mevcut";
+        public static string AccessTokenCreated = "Token Oluşturuldu";
     }
 }

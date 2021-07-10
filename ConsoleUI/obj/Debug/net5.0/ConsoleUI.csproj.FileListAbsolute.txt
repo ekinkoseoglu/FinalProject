@@ -149,3 +149,7 @@ C:\Users\ekind\Documents\GitHub\FinalProject\ConsoleUI\bin\Debug\net5.0\Microsof
 C:\Users\ekind\Documents\GitHub\FinalProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\ekind\Documents\GitHub\FinalProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Abstractions.dll
 C:\Users\ekind\Documents\GitHub\FinalProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\ekind\Documents\GitHub\FinalProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.dll
+C:\Users\ekind\Documents\GitHub\FinalProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\ekind\Documents\GitHub\FinalProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\ekind\Documents\GitHub\FinalProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Net.Http.Headers.dll

@@ -18,7 +18,7 @@ namespace Business.BusinessAspects.Autofac
         public SecuredOperation(string roles)
         {
             _roles = roles.Split(','); // Bir metni benim belirttiğim karaktere göre ayırıp array'e atıyor
-            _httpContextAccessor = ServiceTool.ServiceProvider.GetService<IHttpContextAccessor>(); // .Net'in bizim Autofac'le oluturduğumuz kendice "Service" mimarimize ulaş ve hangi Service'yiseçtiysen onun referanslarına ulaşmasına izin ver
+                _httpContextAccessor = ServiceTool.ServiceProvider.GetService<IHttpContextAccessor>(); // .Net'in bizim Autofac'le oluturduğumuz kendice "Service" mimarimize ulaş ve hangi Service'yiseçtiysen onun referanslarına ulaşmasına izin ver
 
         }
 
