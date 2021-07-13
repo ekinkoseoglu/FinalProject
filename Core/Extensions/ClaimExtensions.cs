@@ -22,7 +22,7 @@ namespace Core.Extensions
             claims.Add(new Claim(ClaimTypes.NameIdentifier, nameIdentifier));
         }
 
-        public static void AddRoles(this ICollection<Claim> claims, string[] roles) // claims.AddRoles
+        public static void AddRoles(this ICollection<Claim> claims, string[] roles) // claims.AddRoles // Her bir role'ü git sisteme Claimlere ekle
         {
             roles.ToList().ForEach(role => claims.Add(new Claim(ClaimTypes.Role, role)));
         }

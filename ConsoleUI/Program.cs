@@ -1,11 +1,6 @@
 ﻿using Business.Concrete;
-using System;
-using Business.Abstract;
-using Business.Constants;
-using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
-using DataAccess.Concrete.InMemory;
-using Entities.Concrete;
+using System;
 
 namespace ConsoleUI
 {
@@ -13,6 +8,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+
+
 
             // 05/2/2021 7. Ders
             /*
@@ -38,7 +35,7 @@ namespace ConsoleUI
 
 
 
-            
+
 
             /*
             foreach (var x in productManager.GetAll())
@@ -64,7 +61,7 @@ namespace ConsoleUI
 
             CategoryManager categoryManagerEf = new CategoryManager(new EfCategoryDal());
             CustomerManager customerManagerEf = new CustomerManager(new EfCustomerDal());
-            
+
 
 
 
@@ -79,7 +76,7 @@ namespace ConsoleUI
 
             // 05/16/2021 10 Ders
 
-          //  var result = productManagerEf.GetProductDetails(); // Product Listele ve Mesaj ver
+            //  var result = productManagerEf.GetProductDetails(); // Product Listele ve Mesaj ver
             //if (result.Success == true)
             //{
             //    foreach (var x in productManagerEf.GetProductDetails().Data)
@@ -100,7 +97,7 @@ namespace ConsoleUI
             {
                 foreach (var x in result2.Data)
                 {
-                    Console.WriteLine(x.CategoryId +"-----"+x.CategoryName);
+                    Console.WriteLine(x.CategoryId + "-----" + x.CategoryName);
                 }
 
                 Console.WriteLine(result2.Message);
@@ -114,11 +111,11 @@ namespace ConsoleUI
             Console.WriteLine("----------");
 
             var result3 = customerManagerEf.GetAll(); // Customer Listele ve Mesaj ver
-            if (result3.Success==true)
+            if (result3.Success == true)
             {
                 foreach (var x in result3.Data)
                 {
-                    Console.WriteLine(x.CompanyName+"---"+x.CustomerID);
+                    Console.WriteLine(x.CompanyName + "---" + x.CustomerID);
                 }
 
                 Console.WriteLine(result3.Message);

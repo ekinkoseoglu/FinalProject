@@ -10,9 +10,9 @@ namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        private IUserService _userService;
-        private ITokenHelper _tokenHelper;
-        
+        private IUserService _userService; // Kullanıcıyı kontrol etmemiz gerekiyor
+        private ITokenHelper _tokenHelper;// Kullanıcı login olduğunda ona bir token vermemiz gerek o yüzden bu interfaceyi de kullanmamız gerek
+
 
         public AuthManager(IUserService userService, ITokenHelper tokenHelper)
         {
@@ -20,10 +20,10 @@ namespace Business.Concrete
             _tokenHelper = tokenHelper;
         }
 
-        public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
+        public IDataResult<User> Register(UserForRegisterDto userForRegisterDto)
         {
-            byte[] passwordHash, passwordSalt;
-            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            byte[] passwordHash, passwordSalt; // Biz bu değerleri "HashingHelper" classına boş gönderiyoruz.
+            HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out passwordHash, out passwordSalt); // "HashingHelper" class'ında oluşan değerler üstteki değerlere doldurulup değişiyor çünkü "out" keyword ile gönderiyoruz
             var user = new User
             {
                 Email = userForRegisterDto.Email,
@@ -39,13 +39,15 @@ namespace Business.Concrete
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
-            var userToCheck = _userService.GetByMail(userForLoginDto.Email);
+            var userToCheck = _userService.GetByMail(userForLoginDto.Email); // Öncelikle böyle bir kullanıcı var mı ?
             if (userToCheck == null)
             {
                 return new ErrorDataResult<User>(Messages.UserNotFound);
             }
 
-            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt)) // Kullanıcının bize gönderdiği şifreyi hashleyip databasemizdeki hash ile aynı olup olmadığını kontrol ediyoruz. 
+
+            // Kullanıcının  girdiği password eğer bizim User değeri tutan userToCheck Nesnesindeki bizim databasemizdeki User'in "PasswordSalt" algoritmasıyla hashlanmış "PasswordHash" ile Verify edilemiyorsa Şifre hatalı 
             {
                 return new ErrorDataResult<User>(Messages.PasswordError);
             }
@@ -55,21 +57,22 @@ namespace Business.Concrete
 
         public IResult UserExists(string email)
         {
-            if (_userService.GetByMail(email) != null)
+            var user = _userService.GetByMail(email);
+            if (user != null)
             {
                 return new ErrorResult(Messages.UserAlreadyExists);
             }
             return new SuccessResult();
         }
 
-        public IDataResult<AccessToken> CreateAccessToken(User user)
+        public IDataResult<AccessToken> CreateAccessToken(User user) // JwtHelper'daki "CreateToken" Methodu ile UserManager'daki "GetClaims" claimlerini çekerek Token yaratıyor. 
         {
-            var claims = _userService.GetClaims(user);
-            var accessToken = _tokenHelper.CreateToken(user, claims);
-            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
+            var claims = _userService.GetClaims(user); // Kullanıcının Claimlerini
+            var accessToken = _tokenHelper.CreateToken(user, claims); // User'i ve Claimlerini alıp ona uygun token'i yaratıyoruz
+            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated); // AccessToken'i döndürsün
         }
 
-        
-        
+
+
     }
 }

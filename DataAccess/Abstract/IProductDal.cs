@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Core.DataAccess;
+﻿using Core.DataAccess;
 using Entities.Concrete;
 using Entities.DTOs;
+using System.Collections.Generic;
 
 
 namespace DataAccess.Abstract
 {
-   public interface IProductDal:IEntityRepository<Product> // Sen bir IEntityRepository'sin ve çalışma tipin "Product"'dır dedik
-   {
-      // Buraya ürüne ait özel operasyonları koyacağız
-      
-      // Örneğin ürünün detaylarını getirmek için ürün Category tablolarına join atmak gibi
+    public interface IProductDal : IEntityRepository<Product> // Sen bir IEntityRepository'sin ve çalışma tipin "Product"'dır dedik
+    {
+        // Buraya ürüne ait özel operasyonları koyacağız
 
-      // DTO metodları buraya yazılacak 
+        // Örneğin ürünün detaylarını getirmek için ürün Category tablolarına join atmak gibi
 
-      List<ProductDetailDto> GetProductDetails();
+        // DTO metodları buraya yazılacak 
+        List<ProductDetailDto> GetProductDetails();
 
-   }
+    }
 }
 //Code Refactoring

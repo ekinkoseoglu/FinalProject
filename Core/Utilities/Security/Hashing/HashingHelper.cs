@@ -21,7 +21,7 @@ namespace Core.Utilities.Security.Hashing
 
                 for (int i = 0; i < computedHash.Length; i++) // İki hash'i karşılaştırıyoruz
                 {
-                    if (computedHash[i] != passwordHash[i]) // oluşan iki değer de byte[] dir 
+                    if (computedHash[i] != passwordHash[i]) // Kullanıcının girdiği "comtupeHash" ile databasemdeki "passwordHash"' i karşılaştırıyorum.
                     {
                         return false;       // eşleşmezlerse uyumsuz parola
                     }
