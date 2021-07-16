@@ -24,13 +24,13 @@ namespace WebAPI.Controllers
                 return BadRequest(userToLogin.Message);
             }
 
-            var result = _authService.CreateAccessToken(userToLogin.Data); // İşlem başarılıysa o kullanıcıya AccessToken veriyoruz
-            if (result.Success)
+            var token = _authService.CreateAccessToken(userToLogin.Data); // İşlem başarılıysa o kullanıcıya AccessToken veriyoruz
+            if (token.Success)
             {
-                return Ok(result.Data);
+                return Ok(token.Data);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(token.Message);
         }
 
         [HttpPost("register")]
