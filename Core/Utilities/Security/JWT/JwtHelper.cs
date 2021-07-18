@@ -25,7 +25,7 @@ namespace Core.Utilities.Security.JWT
         }
         public AccessToken CreateToken(User user, List<OperationClaim> operationClaims) // Bana User bilgisini ve Claimleri ver ben ona göre bir Token oluşturayım
         {
-            //_accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
+            _accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
 
 
             /* var securityKey= new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenOptions.SecurityKey)); yerine aşağıdakini yazıyorum çünkü SecurityKey'i her seferinde böyle yaratmak yerine bir kere "Encryption" klasörüne Yazıp sürekli oradan çekiyorum. */

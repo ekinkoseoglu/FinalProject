@@ -42,8 +42,8 @@ namespace WebAPI.Controllers
                 return BadRequest(userExists.Message);
             }
 
-            var registerResult = _authService.Register(userForRegisterDto); // Register
-            var result = _authService.CreateAccessToken(registerResult.Data);// "RegisterResult" bir user döndürüyor ve o User için bir AccesToken yaratıyoruz.
+            var registerResult = _authService.Register(userForRegisterDto); // Register ettik kullanıcıyı
+            var result = _authService.CreateAccessToken(registerResult.Data); // şimdide "RegisterResult" bir user döndürüyor ve ben o User için bir AccesToken yaratıyorum.
             if (result.Success)
             {
                 return Ok(result.Data);

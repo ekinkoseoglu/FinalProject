@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -16,6 +17,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getall")]
+        [Authorize(Roles="Product.List")] // Bu operasyonu çalıştırabilmek için kişinin Authantice olması yeterli yani buna istek yaptığında elinde bir token'i olması yeterli (Yani sisteme giriş yapmış olması yeterli)
         public IActionResult Get()
         {
             var result = _productService.GetAll();

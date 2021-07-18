@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Core.Utilities.Security.Encryption;
+using Core.Utilities.Security.JWT;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace WebAPI
@@ -30,22 +34,21 @@ namespace WebAPI
             //services.AddSingleton<IProductService, ProductManager>(); // Birisi senden  IProductService isterse ona ProductManager ver
             //services.AddSingleton<IProductDal, EfProductDal>(); // Birisi senden  IProductDal isterse ona EfProductDal ver
 
-            //var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>(); //BİZ  ASP.NET WebAPI'ye "BU SİSTEMDE JWT KULLANILACAK HABERİN OLSUN" DİYORUZ. (Aşağısı dahil)
+            var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>(); //BİZ  ASP.NET WebAPI'ye "BU SİSTEMDE JWT KULLANILACAK HABERİN OLSUN" DİYORUZ. (Aşağısı dahil)
 
-            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            //    .AddJwtBearer(options =>
-            //    {
-            //        options.TokenValidationParameters = new TokenValidationParameters
-            //        {
-            //            ValidateIssuer = true,
-            //            ValidateAudience = true,
-            //            ValidateLifetime = true,
-            //            ValidIssuer = tokenOptions.Issuer,
-            //            ValidAudience = tokenOptions.Audience,
-            //            ValidateIssuerSigningKey = true,
-            //            IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
-            //        };
-            //    });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true, // Token verdiğimiz zaman Issuer olarak (www.ekin.com) veriyoruz oradan bana bu bilgi geri gelsin mi?
+                        ValidateAudience = true, // Audience'yı da kontrol et
+                        ValidateLifetime = true, // Token'ın da lifetimesini kontrol edeyim mi yoksa bi token olsun yeterli mi?
+                        ValidIssuer = tokenOptions.Issuer, //normalde  (www.ekin.com) yazmam gerekiyordu ama yukarıda TokenOptions'a bağladık oradan çektik
+                        ValidAudience = tokenOptions.Audience, // TokenOptions'da ki Audience
+                        ValidateIssuerSigningKey = true, // Anahtarı da kontrol et
+                        IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
+                    };
+                });
             //ServiceTool.Create(services);
 
 
@@ -71,8 +74,9 @@ namespace WebAPI
 
             app.UseRouting();
 
-            app.UseAuthorization();
-            app.UseAuthentication();
+            app.UseAuthentication(); // Eve Giriş için anahtar // Önce eve gireceksin, sonra evde birşeyler yapabilirsin. (Authentication önde olacak)
+
+            app.UseAuthorization(); // Evdeki yetki
 
             app.UseEndpoints(endpoints =>
             {
