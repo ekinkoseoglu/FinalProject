@@ -132,7 +132,7 @@ namespace Business.Concrete
         {
             // Select Count(*) from Products where CategoryId=1
             var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
-            if (result >= 10)
+            if (result >= 12)
             {
                 return new ErrorResult(Messages.CategoryLimitError);
             }

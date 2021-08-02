@@ -1,4 +1,7 @@
-﻿using Core.Utilities.Security.Encryption;
+﻿using Core.DependencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
+using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -49,7 +52,11 @@ namespace WebAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
-            //ServiceTool.Create(services);
+            // ServiceTool.Create(services); // yerine....
+            services.AddDependencyResolvers(new ICoreModule[] // Biz yarın CoreModule gibi injectionlar için farklı Moduller de oluşturursak onları da istediğimiz kadar oluşturup burada onu da ekleyebiliriz. (AspectModule, SecurityModule vb.)
+            {
+                new CoreModule()
+            });
 
 
             services.AddSwaggerGen(c =>
