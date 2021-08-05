@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
             var result = _authService.CreateAccessToken(registerResult.Data); // şimdide "RegisterResult" bir user döndürüyor ve ben o User için bir AccesToken yaratıyorum.
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(registerResult.Message);
             }
 
             return BadRequest(result.Message);

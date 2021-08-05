@@ -11,11 +11,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.DependencyResolvers
 {
-    public class CoreModule:ICoreModule
+    public class CoreModule:ICoreModule 
     {
         public void Load(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddMemoryCache(); // .Net Core kendisi otomatik IMemoryCache ile injection yapıyor ve artık implemente olan classların lokaline yazdığımızda bir karşılığı var
+            serviceCollection.AddMemoryCache(); // built-in IMemoryCache'nin instancesi (IMemoryCache interfacesinin lokalde çalışabilmesi için) (Built-in cacheyi çalıştırmamız için bu injection'u yazmalıyız, başka bir zaman Redis'e geçersem bunu yazmama gerek yok.)
             serviceCollection.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             serviceCollection.AddSingleton<ICacheManager, MemoryCacheManager>();
         }
