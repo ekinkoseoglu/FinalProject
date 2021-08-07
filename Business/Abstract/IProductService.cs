@@ -20,7 +20,8 @@ namespace Business.Abstract
         IResult Update(Product product);
         IResult Delete(int id);
 
-       IDataResult<List<ProductDetailDto>> GetProductDetails();
+        IResult AddTransactionalTest(Product product);
+        IDataResult<List<ProductDetailDto>> GetProductDetails();
 
     }
 }

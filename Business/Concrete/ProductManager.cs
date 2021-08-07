@@ -10,6 +10,7 @@ using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using Core.Aspects.Autofac.Caching;
 
 namespace Business.Concrete
 {
@@ -25,7 +26,7 @@ namespace Business.Concrete
             _categoryService = categoryService;
 
         }
-
+        [CacheAspect]
         public IDataResult<List<Product>> GetAll()
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -36,7 +37,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductListed); // Ben 2DataResult<>' döndürüyorum, Çalıştığım tip 'List<Product>' dır, ilk parametre '_productDal.GetAll()' döndürdüğüm datadır, 'true' işlem sonucumdur ve mesajım da "Ürünler Listelendi"
 
         }
-
+        [CacheAspect]
         public IDataResult<Product> GetById(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -45,7 +46,7 @@ namespace Business.Concrete
             }
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == id), Messages.HasShown);
         }
-
+        [CacheAspect]
         public IDataResult<List<Product>> GetAllByCategoryId(int id)
         {
 
@@ -69,6 +70,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("product.add,admin")]
+        [CacheRemoveAspect("IProductService.Get")]
         [ValidationAspect(typeof(ProductValidator))] // ProductValidator kullanarak Product parametreli bu metodu kontrol et
         public IResult Add(Product product)
         {
@@ -88,7 +90,7 @@ namespace Business.Concrete
 
 
         }
-
+        [CacheRemoveAspect("IProductService.Get")] // Bellekteki tüm Get requestleri, içerisinde Get olan tüm keyleri Cacheden sil
         public IResult Update(Product product)
         {
 
@@ -99,7 +101,7 @@ namespace Business.Concrete
             _productDal.Update(product);
             return new SuccessResult("Ürün Güncellendi");
         }
-
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Delete(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -110,6 +112,19 @@ namespace Business.Concrete
             var deletedProduct = _productDal.Get(p => p.ProductId == id);
             _productDal.Delete(deletedProduct);
             return new SuccessResult("Ürün Silindi");
+        }
+
+        public IResult AddTransactionalTest(Product product)
+        {
+            Add(product);
+            if (product.UnitPrice<10)
+            {
+                throw new Exception("");
+
+            }
+
+            Add(product);
+            return null;
         }
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
