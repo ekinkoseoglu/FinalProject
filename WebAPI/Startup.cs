@@ -63,6 +63,7 @@ namespace WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
             });
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,7 +77,7 @@ namespace WebAPI
             }
 
             app.UseCors(
-                builder => builder.WithOrigins("http://localhost:44360").AllowAnyHeader());/*Bu domainden gelen her türlü "Get,Post,Put, Delete" gibi bütün http requestlerine izin ver */
+                builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());/*Bu domainden gelen her türlü "Get,Post,Put, Delete" gibi bütün http requestlerine izin ver */
             app.UseHttpsRedirection();
 
             app.UseRouting();

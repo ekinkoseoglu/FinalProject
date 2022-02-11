@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj": {
+    "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,21 +96,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,11 +128,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj"
+              "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj"
               },
-              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj"
+              "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -159,21 +167,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj": {
+    "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -187,8 +199,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Core\\Core.csproj"
+              "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj"
               }
             }
           }
@@ -217,7 +229,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

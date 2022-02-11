@@ -7785,19 +7785,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ekind\\.nuget\\packages\\": {}
+    "C:\\Users\\ekind\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
       "projectName": "ConsoleUI",
-      "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
       "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\ConsoleUI\\obj\\",
+      "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\ConsoleUI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7811,8 +7816,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj"
+            "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Business\\Business.csproj"
             }
           }
         }
@@ -7841,7 +7846,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

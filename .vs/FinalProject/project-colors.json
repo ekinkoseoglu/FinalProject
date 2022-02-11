@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0ca2497f-9f94-4a17-8e2f-30dc889b80d4": {
+      "ProjectGuid": "0ca2497f-9f94-4a17-8e2f-30dc889b80d4",
+      "DisplayName": "WebAPI",
+      "ColorIndex": 0
+    },
+    "f89057b3-3477-4c21-b9b0-b2606105a5a3": {
+      "ProjectGuid": "f89057b3-3477-4c21-b9b0-b2606105a5a3",
+      "DisplayName": "Business",
+      "ColorIndex": 1
+    },
+    "49ecdccb-58c1-4480-a870-ae83d57b5ea1": {
+      "ProjectGuid": "49ecdccb-58c1-4480-a870-ae83d57b5ea1",
+      "DisplayName": "Core",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

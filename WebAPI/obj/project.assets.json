@@ -7909,19 +7909,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ekind\\.nuget\\packages\\": {}
+    "C:\\Users\\ekind\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7935,11 +7940,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Business\\Business.csproj"
+            "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Business\\Business.csproj"
             },
-            "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\FinalProject\\Entities\\Entities.csproj"
+            "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Entities\\Entities.csproj"
             }
           }
         }
@@ -7985,7 +7990,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
