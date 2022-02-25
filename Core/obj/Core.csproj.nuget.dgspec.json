@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj": {}
+    "C:\\Users\\ekind\\Desktop\\Codes\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj": {
+    "C:\\Users\\ekind\\Desktop\\Codes\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\Codes\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\ekind\\Desktop\\Codes\\C#\\FinalProject\\FinalProject\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\FinalProject\\FinalProject\\Core\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Desktop\\Codes\\C#\\FinalProject\\FinalProject\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
