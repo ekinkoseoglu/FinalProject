@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using System.Threading;
+using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ namespace WebAPI.Controllers
         public IActionResult Get()
         {
             var result = _productService.GetAll();
-
+            Thread.Sleep(1000); // For Bootstrap spinner
             if (result.Success)
             {
                 return Ok(result); // Statu code 200
@@ -48,6 +49,18 @@ namespace WebAPI.Controllers
         public IActionResult Get(int id)
         {
             var result = _productService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbycategory")]
+        public IActionResult GetByCategoryId(int categoryId)
+        {
+            var result = _productService.GetAllByCategoryId(categoryId);
             if (result.Success)
             {
                 return Ok(result);
