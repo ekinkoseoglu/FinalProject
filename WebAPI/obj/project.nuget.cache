@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DAv0ph32A16Qwn5C3mTEcDdc8aY1ukxWvvh6euFth6lxvwpxmgWtJi778S/Kl0tGmgn12LfyjEsVG9yRqhQpRA==",
+  "dgSpecHash": "kxRD3hyiEEk50zNi+W/tePmxRWk4h8V18nrPbEcFB9auKsarFaM5xOsKjrBn6kuSA4AQYxviG5eiMDE0R0pfEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ekind\\Desktop\\Codes\\C#\\FinalProject\\FinalProject\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\ekind\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

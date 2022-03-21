@@ -69,7 +69,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max), Messages.ProductListed);
         }
 
-        [SecuredOperation("product.add,admin")]
+        //[SecuredOperation("product.add,admin")]
         [CacheRemoveAspect("IProductService.Get")]
         [ValidationAspect(typeof(ProductValidator))] // ProductValidator kullanarak Product parametreli bu metodu kontrol et
         public IResult Add(Product product)

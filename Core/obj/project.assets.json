@@ -7699,7 +7699,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.6",
       "Microsoft.Extensions.Configuration >= 5.0.0",
       "Microsoft.Extensions.Configuration.Binder >= 5.0.0",
-      "Microsoft.Extensions.DependencyInjection.Abstractions >= 5.0.0"
+      "Microsoft.Extensions.DependencyInjection.Abstractions >= 5.0.0",
+      "Newtonsoft.Json >= 10.0.1"
     ]
   },
   "packageFolders": {
@@ -7781,6 +7782,10 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": {
             "target": "Package",
             "version": "[5.0.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[10.0.1, )"
           }
         },
         "imports": [

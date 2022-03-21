@@ -34,3 +34,15 @@ C:\Users\ekind\Desktop\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.c
 C:\Users\ekind\Desktop\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.dll
 C:\Users\ekind\Desktop\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\ref\Core.dll
 C:\Users\ekind\Desktop\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.pdb
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\bin\Debug\net5.0\Core.deps.json
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\bin\Debug\net5.0\Core.dll
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\bin\Debug\net5.0\ref\Core.dll
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\bin\Debug\net5.0\Core.pdb
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.csproj.AssemblyReference.cache
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.dll
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\ref\Core.dll
+C:\Users\ekind\Desktop\Codes\C#\FinalProject\FinalProject\Core\obj\Debug\net5.0\Core.pdb
