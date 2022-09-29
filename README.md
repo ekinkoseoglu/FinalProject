@@ -1,5 +1,9 @@
 # E-Commerce Backend Prototype
 
+It is the backend project provides E-Commerce Prototype service.
+This project strictly implements the **OOP**, **SOLID** and **AOP** principles. An objective approach was followed throughout the project. The project also has unit testing.
+In addition to the backend project, the frontend part with Angular continues to be developed.
+
 
 ## Used Technologies And Principles
 - ASP.NET Core 5.0
